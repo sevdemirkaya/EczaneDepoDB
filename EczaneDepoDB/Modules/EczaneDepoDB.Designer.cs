@@ -54,12 +54,13 @@
             // 
             // btn_createReceipt
             // 
-            this.btn_createReceipt.Location = new System.Drawing.Point(692, 284);
+            this.btn_createReceipt.Location = new System.Drawing.Point(683, 282);
             this.btn_createReceipt.Name = "btn_createReceipt";
             this.btn_createReceipt.Size = new System.Drawing.Size(135, 23);
             this.btn_createReceipt.TabIndex = 10;
             this.btn_createReceipt.Text = "Create Receipt";
             this.btn_createReceipt.UseVisualStyleBackColor = true;
+            this.btn_createReceipt.Click += new System.EventHandler(this.btn_createReceipt_Click);
             // 
             // EczaneDepoDB
             // 
@@ -80,6 +81,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_viewDrugStock;
         private System.Windows.Forms.Button btn_createReceipt;
+
     }
 }
 

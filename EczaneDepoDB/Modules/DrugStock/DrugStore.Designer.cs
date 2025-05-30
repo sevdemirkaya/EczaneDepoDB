@@ -47,6 +47,7 @@ namespace EczaneDepoDB.Modules
             this.dg_DrugStore.ReadOnly = true;
             this.dg_DrugStore.Size = new System.Drawing.Size(761, 245);
             this.dg_DrugStore.TabIndex = 0;
+            this.dg_DrugStore.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.event_UserDeletingRow);
             // 
             // btn_AddDrug
             // 
@@ -54,7 +55,7 @@ namespace EczaneDepoDB.Modules
             this.btn_AddDrug.Name = "btn_AddDrug";
             this.btn_AddDrug.Size = new System.Drawing.Size(75, 23);
             this.btn_AddDrug.TabIndex = 1;
-            this.btn_AddDrug.Text = "Add Drugs";
+            this.btn_AddDrug.Text = "Add Drug";
             this.btn_AddDrug.UseVisualStyleBackColor = true;
             this.btn_AddDrug.Click += new System.EventHandler(this.btn_AddDrug_Click);
             // 
@@ -64,7 +65,7 @@ namespace EczaneDepoDB.Modules
             this.btn_drugUpdate.Name = "btn_drugUpdate";
             this.btn_drugUpdate.Size = new System.Drawing.Size(75, 23);
             this.btn_drugUpdate.TabIndex = 2;
-            this.btn_drugUpdate.Text = "button1";
+            this.btn_drugUpdate.Text = "Edit Drug";
             this.btn_drugUpdate.UseVisualStyleBackColor = true;
             this.btn_drugUpdate.Click += new System.EventHandler(this.btn_drugUpdate_Click);
             // 
@@ -78,6 +79,7 @@ namespace EczaneDepoDB.Modules
             this.Controls.Add(this.dg_DrugStore);
             this.Name = "DrugStore";
             this.Text = "DrugStore";
+            this.Load += new System.EventHandler(this.DrugStore_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_DrugStore)).EndInit();
             this.ResumeLayout(false);
 

@@ -1,0 +1,33 @@
+﻿using System;
+
+namespace EczaneDepoDB.Modal.DataAccess
+{
+    internal class Prescription
+    {
+        public int Id { get; set; }
+        public string NationalId { get; set; }
+        public Drug[] DrugList { get; set; }
+        public int Status { get; set; }
+        public DateTime CreatedAt { get; set; }
+
+        public Prescription(int id, string nationalId, Drug[] drugList, int status, DateTime createdAt)
+        {
+            Id = id;
+            NationalId = nationalId;
+            DrugList = drugList;
+            Status = status;
+            CreatedAt = createdAt;
+
+        }
+
+        public Prescription(string nationalId, Drug[] drugList, int status, DateTime createdAt)
+        {
+           
+            NationalId = nationalId;
+            DrugList = drugList;
+            Status = status;
+            CreatedAt = createdAt;
+        }
+        
+    }
+}

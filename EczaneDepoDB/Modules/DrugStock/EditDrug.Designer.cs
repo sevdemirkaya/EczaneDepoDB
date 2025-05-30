@@ -35,6 +35,12 @@
             this.txt_DrugName = new System.Windows.Forms.TextBox();
             this.txt_DrugId = new System.Windows.Forms.TextBox();
             this.lbl_DrugId = new System.Windows.Forms.Label();
+            this.lbl_desc = new System.Windows.Forms.Label();
+            this.txt_Description = new System.Windows.Forms.TextBox();
+            this.lbl_quantity = new System.Windows.Forms.Label();
+            this.txt_Quantity = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_Price = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbl_Barcode
@@ -57,12 +63,13 @@
             // 
             // btn_AddDrug
             // 
-            this.btn_AddDrug.Location = new System.Drawing.Point(266, 208);
+            this.btn_AddDrug.Location = new System.Drawing.Point(263, 346);
             this.btn_AddDrug.Name = "btn_AddDrug";
             this.btn_AddDrug.Size = new System.Drawing.Size(200, 30);
             this.btn_AddDrug.TabIndex = 10;
             this.btn_AddDrug.Text = "İlacı Ekle";
             this.btn_AddDrug.UseVisualStyleBackColor = true;
+            this.btn_AddDrug.Click += new System.EventHandler(this.btn_AddDrug_Click);
             // 
             // txt_Barcode
             // 
@@ -82,6 +89,7 @@
             // 
             this.txt_DrugId.Location = new System.Drawing.Point(266, 88);
             this.txt_DrugId.Name = "txt_DrugId";
+            this.txt_DrugId.ReadOnly = true;
             this.txt_DrugId.Size = new System.Drawing.Size(200, 20);
             this.txt_DrugId.TabIndex = 7;
             // 
@@ -94,11 +102,65 @@
             this.lbl_DrugId.TabIndex = 11;
             this.lbl_DrugId.Text = "İlaç ID:";
             // 
+            // lbl_desc
+            // 
+            this.lbl_desc.AutoSize = true;
+            this.lbl_desc.Location = new System.Drawing.Point(186, 207);
+            this.lbl_desc.Name = "lbl_desc";
+            this.lbl_desc.Size = new System.Drawing.Size(63, 13);
+            this.lbl_desc.TabIndex = 15;
+            this.lbl_desc.Text = "Description:";
+            // 
+            // txt_Description
+            // 
+            this.txt_Description.Location = new System.Drawing.Point(266, 204);
+            this.txt_Description.Name = "txt_Description";
+            this.txt_Description.Size = new System.Drawing.Size(200, 20);
+            this.txt_Description.TabIndex = 14;
+            // 
+            // lbl_quantity
+            // 
+            this.lbl_quantity.AutoSize = true;
+            this.lbl_quantity.Location = new System.Drawing.Point(186, 247);
+            this.lbl_quantity.Name = "lbl_quantity";
+            this.lbl_quantity.Size = new System.Drawing.Size(39, 13);
+            this.lbl_quantity.TabIndex = 17;
+            this.lbl_quantity.Text = "Miktar:";
+            // 
+            // txt_Quantity
+            // 
+            this.txt_Quantity.Location = new System.Drawing.Point(266, 244);
+            this.txt_Quantity.Name = "txt_Quantity";
+            this.txt_Quantity.Size = new System.Drawing.Size(200, 20);
+            this.txt_Quantity.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(186, 283);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Ücret";
+            // 
+            // txt_Price
+            // 
+            this.txt_Price.Location = new System.Drawing.Point(266, 280);
+            this.txt_Price.Name = "txt_Price";
+            this.txt_Price.Size = new System.Drawing.Size(200, 20);
+            this.txt_Price.TabIndex = 31;
+            // 
             // EditDrug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_Price);
+            this.Controls.Add(this.lbl_quantity);
+            this.Controls.Add(this.txt_Quantity);
+            this.Controls.Add(this.lbl_desc);
+            this.Controls.Add(this.txt_Description);
             this.Controls.Add(this.lbl_Barcode);
             this.Controls.Add(this.lbl_DrugName);
             this.Controls.Add(this.lbl_DrugId);
@@ -122,5 +184,11 @@
         private System.Windows.Forms.TextBox txt_DrugName;
         private System.Windows.Forms.TextBox txt_DrugId;
         private System.Windows.Forms.Label lbl_DrugId;
+        private System.Windows.Forms.Label lbl_desc;
+        private System.Windows.Forms.TextBox txt_Description;
+        private System.Windows.Forms.Label lbl_quantity;
+        private System.Windows.Forms.TextBox txt_Quantity;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_Price;
     }
 }
