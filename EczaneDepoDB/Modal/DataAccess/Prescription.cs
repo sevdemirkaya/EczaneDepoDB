@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EczaneDepoDB.Modal.DataAccess
 {
@@ -6,11 +7,13 @@ namespace EczaneDepoDB.Modal.DataAccess
     {
         public int Id { get; set; }
         public string NationalId { get; set; }
-        public Drug[] DrugList { get; set; }
+        public List<Drug> DrugList { get; set; }
         public int Status { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public Prescription(int id, string nationalId, Drug[] drugList, int status, DateTime createdAt)
+        public Prescription() { }
+
+        public Prescription(int id, string nationalId, List<Drug> drugList, int status, DateTime createdAt)
         {
             Id = id;
             NationalId = nationalId;
@@ -20,7 +23,7 @@ namespace EczaneDepoDB.Modal.DataAccess
 
         }
 
-        public Prescription(string nationalId, Drug[] drugList, int status, DateTime createdAt)
+        public Prescription(string nationalId, List<Drug> drugList, int status, DateTime createdAt)
         {
            
             NationalId = nationalId;

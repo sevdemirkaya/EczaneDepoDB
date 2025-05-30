@@ -36,9 +36,12 @@
             // txt_NationalID
             // 
             this.txt_NationalID.Location = new System.Drawing.Point(178, 129);
+            this.txt_NationalID.MaxLength = 11;
             this.txt_NationalID.Name = "txt_NationalID";
             this.txt_NationalID.Size = new System.Drawing.Size(310, 20);
             this.txt_NationalID.TabIndex = 0;
+            this.txt_NationalID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_NationalID.TextChanged += new System.EventHandler(this.integerOnlyTextChanged);
             // 
             // label1
             // 
@@ -49,7 +52,6 @@
             this.label1.Size = new System.Drawing.Size(123, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "TC KİMLİK GİRİNİZ.";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn_Prescription
             // 
@@ -71,7 +73,6 @@
             this.Controls.Add(this.txt_NationalID);
             this.Name = "Prescription";
             this.Text = "Prescription";
-           
             this.ResumeLayout(false);
             this.PerformLayout();
 

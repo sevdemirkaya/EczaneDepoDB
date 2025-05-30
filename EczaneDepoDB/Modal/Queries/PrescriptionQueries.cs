@@ -1,5 +1,8 @@
 ﻿using EczaneDepoDB.Modal.DataAccess;
+using EczaneDepoDB.Modules.Prescription;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -7,22 +10,54 @@ namespace EczaneDepoDB.Modal.Queries
 {
     internal class PrescriptionQueries
     {
-        private string connectionString = @"Data Source=DESKTOP-D2T030R\SQLEXPRESS;Initial Catalog=EczaneDepoDB;Integrated Security=True;";
+        private readonly string connectionString = @"Data Source=DESKTOP-D2T030R\SQLEXPRESS;Initial Catalog=EczaneDepoDB;Integrated Security=True;";
 
-        internal DataTable GetPrescriptionData()
+        internal DataAccess.Prescription GetByNationalId(string id)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
-                string query = "SELECT * FROM Prescriptions";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                return dt;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT TOP(1) * FROM Prescriptions WHERE NationalId = @id AND Status = 0 ORDER BY CreatedAt DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string drugListJson = reader["DrugList"]?.ToString();
+
+
+                                var prescription = new DataAccess.Prescription()
+                                {
+                                    Id = Convert.ToInt32(reader["Id"]),
+                                    NationalId = reader["NationalId"].ToString(),
+                                    Status = Convert.ToInt32(reader["Status"]),
+                                    CreatedAt = Convert.ToDateTime(reader["CreatedAt"]),
+                                    DrugList = !string.IsNullOrWhiteSpace(drugListJson)
+                                        ? JsonConvert.DeserializeObject<List<Drug>>(drugListJson)
+                                        : new List<Drug>()
+                                };
+
+                                return prescription;
+                            }
+                        }
+                    }
+                }
+
+                return null; 
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
-        internal bool InsertPrescription(Prescription prescription)
+        internal bool Insert(DataAccess.Prescription prescription)
         {
             try
             {
@@ -48,7 +83,7 @@ namespace EczaneDepoDB.Modal.Queries
             }
         }
 
-        internal bool DeletePrescription(int id)
+        internal bool Delete(int id)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -60,7 +95,7 @@ namespace EczaneDepoDB.Modal.Queries
             }
         }
 
-        internal bool UpdatePrescription(Prescription prescription)
+        internal bool Update(DataAccess.Prescription prescription)
         {
             try
             {

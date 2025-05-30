@@ -12,7 +12,7 @@ namespace EczaneDepoDB.Modules.Prescription
 {
     public partial class Receipt : Form
     {
-        public Receipt()
+        internal Receipt(Modal.DataAccess.Prescription prec)
         {
             InitializeComponent();
         }
