@@ -41,6 +41,7 @@ namespace EczaneDepoDB.Modules
             // 
             this.dg_DrugStore.AllowUserToAddRows = false;
             this.dg_DrugStore.AllowUserToOrderColumns = true;
+            this.dg_DrugStore.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dg_DrugStore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_DrugStore.Location = new System.Drawing.Point(89, 99);
             this.dg_DrugStore.Name = "dg_DrugStore";
@@ -51,22 +52,26 @@ namespace EczaneDepoDB.Modules
             // 
             // btn_AddDrug
             // 
+            this.btn_AddDrug.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_AddDrug.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_AddDrug.Location = new System.Drawing.Point(89, 50);
             this.btn_AddDrug.Name = "btn_AddDrug";
-            this.btn_AddDrug.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddDrug.Size = new System.Drawing.Size(295, 23);
             this.btn_AddDrug.TabIndex = 1;
-            this.btn_AddDrug.Text = "Add Drug";
-            this.btn_AddDrug.UseVisualStyleBackColor = true;
+            this.btn_AddDrug.Text = "İlaç Ekle";
+            this.btn_AddDrug.UseVisualStyleBackColor = false;
             this.btn_AddDrug.Click += new System.EventHandler(this.btn_AddDrug_Click);
             // 
             // btn_drugUpdate
             // 
-            this.btn_drugUpdate.Location = new System.Drawing.Point(272, 50);
+            this.btn_drugUpdate.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_drugUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_drugUpdate.Location = new System.Drawing.Point(541, 50);
             this.btn_drugUpdate.Name = "btn_drugUpdate";
-            this.btn_drugUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btn_drugUpdate.Size = new System.Drawing.Size(309, 23);
             this.btn_drugUpdate.TabIndex = 2;
-            this.btn_drugUpdate.Text = "Edit Drug";
-            this.btn_drugUpdate.UseVisualStyleBackColor = true;
+            this.btn_drugUpdate.Text = "İlaç Güncelle";
+            this.btn_drugUpdate.UseVisualStyleBackColor = false;
             this.btn_drugUpdate.Click += new System.EventHandler(this.btn_drugUpdate_Click);
             // 
             // DrugStore

@@ -51,5 +51,10 @@ namespace EczaneDepoDB.Modules.DrugStock
             DrugUpdated?.Invoke(this, EventArgs.Empty);
             this.Close();
         }
+
+        private void AddDrug_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

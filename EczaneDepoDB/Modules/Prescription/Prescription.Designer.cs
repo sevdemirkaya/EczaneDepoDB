@@ -35,10 +35,10 @@
             // 
             // txt_NationalID
             // 
-            this.txt_NationalID.Location = new System.Drawing.Point(178, 129);
+            this.txt_NationalID.Location = new System.Drawing.Point(186, 125);
             this.txt_NationalID.MaxLength = 11;
             this.txt_NationalID.Name = "txt_NationalID";
-            this.txt_NationalID.Size = new System.Drawing.Size(310, 20);
+            this.txt_NationalID.Size = new System.Drawing.Size(395, 20);
             this.txt_NationalID.TabIndex = 0;
             this.txt_NationalID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_NationalID.TextChanged += new System.EventHandler(this.integerOnlyTextChanged);
@@ -46,21 +46,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(261, 89);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(290, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 13);
+            this.label1.Size = new System.Drawing.Size(172, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "TC KİMLİK GİRİNİZ.";
             // 
             // btn_Prescription
             // 
-            this.btn_Prescription.Location = new System.Drawing.Point(291, 171);
+            this.btn_Prescription.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_Prescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_Prescription.Location = new System.Drawing.Point(316, 173);
             this.btn_Prescription.Name = "btn_Prescription";
-            this.btn_Prescription.Size = new System.Drawing.Size(75, 23);
+            this.btn_Prescription.Size = new System.Drawing.Size(120, 34);
             this.btn_Prescription.TabIndex = 2;
             this.btn_Prescription.Text = "Reçete Bul";
-            this.btn_Prescription.UseVisualStyleBackColor = true;
+            this.btn_Prescription.UseVisualStyleBackColor = false;
             this.btn_Prescription.Click += new System.EventHandler(this.btn_Prescription_Click);
             // 
             // Prescription

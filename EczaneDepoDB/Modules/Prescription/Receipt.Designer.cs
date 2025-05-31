@@ -43,46 +43,52 @@
             // Total_Due
             // 
             this.Total_Due.AutoSize = true;
-            this.Total_Due.Location = new System.Drawing.Point(211, 341);
+            this.Total_Due.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Total_Due.Location = new System.Drawing.Point(156, 334);
             this.Total_Due.Name = "Total_Due";
-            this.Total_Due.Size = new System.Drawing.Size(73, 13);
+            this.Total_Due.Size = new System.Drawing.Size(119, 20);
             this.Total_Due.TabIndex = 19;
             this.Total_Due.Text = "Toplam Tutar:";
             // 
             // LBL_AmountPayable
             // 
             this.LBL_AmountPayable.AutoSize = true;
-            this.LBL_AmountPayable.Location = new System.Drawing.Point(236, 337);
+            this.LBL_AmountPayable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LBL_AmountPayable.Location = new System.Drawing.Point(180, 334);
             this.LBL_AmountPayable.Name = "LBL_AmountPayable";
-            this.LBL_AmountPayable.Size = new System.Drawing.Size(0, 13);
+            this.LBL_AmountPayable.Size = new System.Drawing.Size(0, 20);
             this.LBL_AmountPayable.TabIndex = 18;
             // 
             // lbl_Price
             // 
             this.lbl_Price.AutoSize = true;
-            this.lbl_Price.Location = new System.Drawing.Point(247, 270);
+            this.lbl_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_Price.Location = new System.Drawing.Point(156, 267);
             this.lbl_Price.Name = "lbl_Price";
-            this.lbl_Price.Size = new System.Drawing.Size(26, 13);
+            this.lbl_Price.Size = new System.Drawing.Size(53, 20);
             this.lbl_Price.TabIndex = 17;
-            this.lbl_Price.Text = "fiyat";
+            this.lbl_Price.Text = "Fiyat:";
             // 
             // lbl_NationalId
             // 
             this.lbl_NationalId.AutoSize = true;
-            this.lbl_NationalId.Location = new System.Drawing.Point(236, 45);
+            this.lbl_NationalId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_NationalId.Location = new System.Drawing.Point(145, 42);
             this.lbl_NationalId.Name = "lbl_NationalId";
-            this.lbl_NationalId.Size = new System.Drawing.Size(48, 13);
+            this.lbl_NationalId.Size = new System.Drawing.Size(87, 20);
             this.lbl_NationalId.TabIndex = 16;
-            this.lbl_NationalId.Text = "tc kimlik:";
+            this.lbl_NationalId.Text = "TC Kimlik:";
             // 
             // btn_Buy
             // 
-            this.btn_Buy.Location = new System.Drawing.Point(367, 379);
+            this.btn_Buy.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_Buy.Location = new System.Drawing.Point(294, 379);
             this.btn_Buy.Name = "btn_Buy";
-            this.btn_Buy.Size = new System.Drawing.Size(75, 31);
+            this.btn_Buy.Size = new System.Drawing.Size(246, 35);
             this.btn_Buy.TabIndex = 15;
             this.btn_Buy.Text = "Öde";
-            this.btn_Buy.UseVisualStyleBackColor = true;
+            this.btn_Buy.UseVisualStyleBackColor = false;
             // 
             // textBox4
             // 
@@ -100,6 +106,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(294, 81);
             this.dataGridView1.Name = "dataGridView1";
