@@ -81,6 +81,7 @@ namespace EczaneDepoDB.Modules
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(180, 20);
             this.txt_Search.TabIndex = 3;
+            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
             // DrugStore
             // 
