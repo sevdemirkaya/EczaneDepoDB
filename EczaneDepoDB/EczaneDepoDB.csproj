@@ -56,6 +56,7 @@
     <Compile Include="Modal\DataAccess\Receipt.cs" />
     <Compile Include="Modal\DataAccess\Prescription.cs" />
     <Compile Include="Modal\DataAccess\Drug.cs" />
+    <Compile Include="Modal\Queries\ReceiptQueries.cs" />
     <Compile Include="Modal\Queries\PrescriptionQueries.cs" />
     <Compile Include="Modal\Queries\DrugQueries.cs" />
     <Compile Include="Modules\DrugStock\EditDrug.cs">
@@ -82,16 +83,16 @@
     <Compile Include="Modules\DrugStock\DrugStore.Designer.cs">
       <DependentUpon>DrugStore.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Prescription\Receipt.cs">
+    <Compile Include="Modules\Receipt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Prescription\Receipt.Designer.cs">
+    <Compile Include="Modules\Receipt.Designer.cs">
       <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Prescription\Prescription.cs">
+    <Compile Include="Modules\Prescription.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Prescription\Prescription.Designer.cs">
+    <Compile Include="Modules\Prescription.Designer.cs">
       <DependentUpon>Prescription.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -108,27 +109,27 @@
     <EmbeddedResource Include="Modules\DrugStock\DrugStore.resx">
       <DependentUpon>DrugStore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Prescription\Receipt.resx">
+    <EmbeddedResource Include="Modules\Receipt.resx">
       <DependentUpon>Receipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Prescription\Prescription.resx">
+    <EmbeddedResource Include="Modules\Prescription.resx">
       <DependentUpon>Prescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -139,10 +140,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\" />
     <Folder Include="Modal\Helpers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ChatGPT Image 31 May 2025 13_45_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

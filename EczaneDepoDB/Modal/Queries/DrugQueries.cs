@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace EczaneDepoDB.Modal.Queries
 {
-    internal class DrugQueries 
+    internal class DrugQueries
     {
         private string connectionString = @"Data Source=DESKTOP-D2T030R\SQLEXPRESS;Initial Catalog=EczaneDepoDB;Integrated Security=True;";
 
@@ -32,7 +32,7 @@ namespace EczaneDepoDB.Modal.Queries
                 cmd.Parameters.AddWithValue("@DrugId", drugId);
                 int result = cmd.ExecuteNonQuery();
                 return result > 0;
-                
+
             }
         }
 
@@ -64,7 +64,7 @@ namespace EczaneDepoDB.Modal.Queries
 
         }
 
-        internal bool InsertDrug(Drug drug) 
+        internal bool InsertDrug(Drug drug)
         {
             try
             {
@@ -84,12 +84,44 @@ namespace EczaneDepoDB.Modal.Queries
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
         }
 
-       
+        internal Drug GetDrugById(int drugId)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM Drugs WHERE ID = @Id";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", drugId);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Drug
+                            {
+                                Id = Convert.ToInt32(reader["ID"]),
+                                Name = reader["Name"].ToString(),
+                                Description = reader["Description"].ToString(),
+                                Quantity = Convert.ToInt32(reader["Quantity"]),
+                                Barcode = Convert.ToInt64(reader["Barcode"]),
+                                Price = Convert.ToDecimal(reader["Price"])
+                            };
+                        }
+                    }
+                }
+            }
+
+            return null; 
+        }
+
+
     }
 }

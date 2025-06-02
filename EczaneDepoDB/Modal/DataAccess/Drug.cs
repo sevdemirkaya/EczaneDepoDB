@@ -15,7 +15,12 @@ namespace EczaneDepoDB.Modal.DataAccess
         public int Quantity { get; set; }
         public long Barcode{ get; set; }
         public decimal Price{ get; set; }
-
+        public Drug() { }
+        public Drug(int id, int quantity)
+        {
+            Id = id;
+            Quantity = quantity;
+        }
 
         public Drug(int id, string name, string description, int quantity, long barcode, decimal price) 
         {

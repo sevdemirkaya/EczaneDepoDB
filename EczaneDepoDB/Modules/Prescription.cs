@@ -16,20 +16,27 @@ namespace EczaneDepoDB.Modules.Prescription
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
         }
 
         private void btn_Prescription_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(txt_NationalID.Text))
+            {
+                MessageBox.Show("Kimlik numarasını giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             Modal.DataAccess.Prescription prec = PrescriptionQueries.GetByNationalId(txt_NationalID.Text);
             if(prec == null)
             {
-                MessageBox.Show("Prescription not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Reçete bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
-
             Receipt receiptForm = new Receipt(prec);
+            receiptForm.FormClosed += (s, args) => this.Show();
             receiptForm.Show();
+            this.Hide();
         }
 
         private void integerOnlyTextChanged(object sender, EventArgs e)

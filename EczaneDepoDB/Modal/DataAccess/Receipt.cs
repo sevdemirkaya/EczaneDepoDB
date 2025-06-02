@@ -8,16 +8,18 @@ namespace EczaneDepoDB.Modal.DataAccess
         public int Id { get; set; }
         public int PrescriptionId { get; set; }
         public decimal Price { get; set; }
-        public int PhoneNumber { get; set; }
+        public long PhoneNumber { get; set; }
 
-        public Receipt(int id, int prescriptionId, decimal price, int phoneNumber)
+        public DateTime CreatedAt { get; set; }
+
+        public Receipt(int id, int prescriptionId, decimal price, long phoneNumber)
         {
             Id = id;
             PrescriptionId = prescriptionId;
             Price = price;
             PhoneNumber = phoneNumber;
         }
-        public Receipt(int prescriptionId, decimal price, int phoneNumber)
+        public Receipt(int prescriptionId, decimal price, long phoneNumber)
         {
             PrescriptionId = prescriptionId;
             Price = price;

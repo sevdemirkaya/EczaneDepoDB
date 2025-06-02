@@ -106,13 +106,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::EczaneDepoDB.Properties.Resources.ChatGPT_Image_31_May_2025_13_45_32;
             this.pictureBox1.Location = new System.Drawing.Point(-71, -657);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 65);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // EczaneDepoDB
             // 

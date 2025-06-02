@@ -59,15 +59,5 @@ namespace EczaneDepoDB.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ChatGPT_Image_31_May_2025_13_45_32 {
-            get {
-                object obj = ResourceManager.GetObject("ChatGPT Image 31 May 2025 13_45_32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

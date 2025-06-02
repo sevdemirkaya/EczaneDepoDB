@@ -51,7 +51,7 @@ namespace EczaneDepoDB.Modal.Queries
 
                 return null; 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
@@ -111,6 +111,26 @@ namespace EczaneDepoDB.Modal.Queries
                     //cmd.Parameters.AddWithValue("@CreatedAt", prescription.CreatedAt);
                     cmd.Parameters.AddWithValue("@Status", prescription.Status);
 
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        internal bool ChangeStatus(DataAccess.Receipt receipt)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "UPDATE Prescriptions SET Status = 1 WHERE Id = @Id";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Id", receipt.PrescriptionId);
                     cmd.ExecuteNonQuery();
                     return true;
                 }

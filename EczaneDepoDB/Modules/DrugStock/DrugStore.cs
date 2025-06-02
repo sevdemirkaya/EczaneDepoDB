@@ -1,6 +1,7 @@
 ﻿using EczaneDepoDB.Modal.DataAccess;
 using EczaneDepoDB.Modal.Queries;
 using EczaneDepoDB.Modules.DrugStock;
+using EczaneDepoDB.Modules.Prescription;
 using System;
 using System.Configuration;
 using System.Data;
@@ -33,7 +34,9 @@ namespace EczaneDepoDB.Modules
             {
                 LoadDrugData();
             };
+            addDrugForm.FormClosed += (s, args) => this.Show();
             addDrugForm.Show();
+            this.Hide();
         }
 
         private void btn_drugUpdate_Click(object sender, EventArgs e)
@@ -61,7 +64,9 @@ namespace EczaneDepoDB.Modules
             {
                 LoadDrugData(); 
             };
+            editDrugForm.FormClosed += (s, args) => this.Show();
             editDrugForm.Show();
+            this.Hide();
         }
 
         private void event_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
